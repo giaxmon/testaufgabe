@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<ul>
+{% for flight in flightList %}
+
+    <li>From: {{ flight.origin }} To: {{ flight.destination }} <a href="{{ path('Flight_view', {'id': flight.id})   }}">view</a></li>
+{% endfor %}
+</ul>
+{% endblock %}

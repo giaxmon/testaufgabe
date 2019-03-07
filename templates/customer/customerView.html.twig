@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>Customer:</h1>
+<div>
+    Firstname: {{ customer.firstName }}<br>
+    Surname: {{ customer.surName }}<br>
+    Date of Birth: {{ customer.dateOfBirth|date("d/m/Y") }}
+</div>
+
+    <a href="{{ path('Customer_edit', {'id': customer.id})   }}">edit</a>
+{% endblock %}

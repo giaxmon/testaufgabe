@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+        <ul>
+            <li><a href="{{ path('Flight_list') }}">Flight List</a></li>
+            <li><a href="{{ path('Customer_list') }}">Customer List</a></li>
+            <li><a href="{{ path('Booking_list') }}">Booking List</a></li>
+
+            <li><a href="{{ path('Flight_create') }}">New Flight</a></li>
+            <li><a href="{{ path('Customer_create') }}">New Customer</a></li>
+            <li><a href="{{ path('Booking_create') }}">New Booking</a></li>
+            <li><a href="{{ path('Search') }}">Search</a></li>
+
+        </ul>
+        <div>{% block body %}{% endblock %}</div>
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

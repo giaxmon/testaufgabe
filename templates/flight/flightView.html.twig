@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>Flight: {{ flight.id }}</h1>
+<div>
+    Form: {{ flight.origin }}<br>
+    To: {{ flight.destination }}
+</div>
+
+    <a href="{{ path('Flight_edit', {'id': flight.id})   }}">edit</a>
+<ul>
+    {% if flight.bookings is empty %}
+        <li>No Bookings for this flight</li>
+    {% else %}
+        {% for booking in flight.bookings %}
+
+        <li>{{ booking.customer.firstName }}  {{ booking.customer.surName }} <a href="{{ path('Booking_view', {'id': booking.id})   }}"</li>
+
+        {% endfor %}
+    {% endif %}
+</ul>
+{% endblock %}

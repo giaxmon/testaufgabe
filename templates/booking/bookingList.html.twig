@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<ul>
+{% for booking in bookingList %}
+
+    <li>
+        From: {{ booking.flight.origin }} To: {{ booking.flight.destination }}
+        Customer: {{ booking.customer.firstName }} {{ booking.customer.surName }}
+        <a href="{{ path('Flight_view', {'id': booking.flight.id})   }}">view Flight</a>
+        <a href="{{ path('Customer_view', {'id': booking.customer.id})   }}">view Customer</a>
+    </li>
+{% endfor %}
+</ul>
+{% endblock %}

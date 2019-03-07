@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1>Booking</h1>
+<div>
+    Flight<br><a href="{{ path('Flight_view', {'id': booking.flight.id})   }}">view</a>
+    Form: {{ booking.flight.origin }}<br>
+    To: {{ booking.flight.destination }}<br>
+    Customer:    {{ booking.customer.firstName }}  {{ booking.customer.surName }} <a href="{{ path('Customer_view', {'id': booking.customer.id})   }}">view</a>
+</div>
+
+    <a href="{{ path('Booking_edit', {'id': booking.id})   }}">edit</a>
+{% endblock %}

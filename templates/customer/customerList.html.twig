@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<ul>
+{% for customer in customerList %}
+
+    <li>Firstname: {{ customer.firstName }} Surname: {{ customer.surName }} Date of Birth: {{ customer.dateOfBirth|date("d/m/Y") }}   <a href="{{ path('Customer_view', {'id': customer.id})   }}">view</a></li>
+{% endfor %}
+</ul>
+{% endblock %}
